@@ -1,0 +1,1061 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500&display=swap');
+@font-face {
+    font-family: 'Tenada';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+ol,ul{list-style:none}
+a{text-decoration:none;color:inherit}
+html{font-size:62.5%}
+body{background:#000;color:#fff;}
+::selection{
+    background:#fff;
+    color:#000;
+}
+.en{font-family: 'Lilita One', cursive;}
+.ko{font-family: 'Noto Sans KR', sans-serif;}
+.ko2{font-family: 'Tenada';}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background:#000;
+    color:#fff;
+}
+header{
+    width:100%;
+    height:100px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:15;
+    padding: 0 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: #000;
+}
+header h1{
+    width:150px;
+    height: 50px;
+}
+header h1 a img{
+    width:150px;
+    height:50px;
+}
+header .menu{
+    display: flex;
+    line-height: 100px;
+    margin-left: 40px;
+}
+header .menu nav{
+    font-size: 20px;
+}
+header .menu nav ul{
+    display: flex;
+}
+header .menu nav ul li{
+    margin-right: 40px;
+}
+header .menu nav ul li:hover{
+    color: #444;
+}
+header .menu .lang{
+    font-size: 20px;
+}
+/* ---------------------------------------- page_number & page_navigator */
+.page_number{
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    /* margin-left: 3%;
+    overflow: hidden; */
+    z-index: 10;
+}
+.page_number .current_number{
+    font-size: 20px;
+    font-weight: bold;
+}
+.page_number .current_number::after{
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    transform: rotate(135deg);
+}
+.page_number .total_number{
+    font-size: 20px;
+    font-weight: lighter;
+    position: relative;
+    left: 38px;
+}
+.page_navigator{
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.page_navigator li a{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+    position: relative;
+}
+.page_navigator li a .balloon{
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    background: #222;
+    height: 20px;
+    width: 80px;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.page_navigator li a .balloon:after {
+    content: "";
+    position: absolute;
+    border-top: 10px solid #222;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    bottom: -9px;
+    right: -23px;
+    top: -10px;
+    transform: rotate(-90deg);
+}
+.page_navigator li:hover a{
+    transform: scale(1.3);
+}
+.page_navigator li:hover a .balloon{
+    opacity: 1;
+}
+
+.page_navigator li.on a{
+    background: #fff;
+    transition: all 0.3s;
+}
+.page_navigator li.on a .balloon{
+    opacity: 1;
+}
+.page_navigator li:last-child{
+    margin-bottom: 0;
+}
+ /* ----------------------------------------- section txt */
+section{
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+section article{
+    width: 100%;
+    height: auto;
+}
+section article .txt{
+    position: absolute;
+    top: 55%;
+    transform: translateY(-55%);
+    left: 12%;
+    z-index: 2;
+}
+section article .txt h2{
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+section article .txt h3{
+    font-size: 35px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+section article .txt p{
+    font: normal 18px/1.5 "arial";
+    color: #777;
+    margin-bottom: 100px;
+}
+section article .txt p strong{
+    color: #fff;
+}
+section article .txt span{
+    display: flex;
+    font-size: 18px;
+    position: relative;
+}
+section article .txt span a{
+    width: 35px;
+    height: 35px;
+    background: brown;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 20px;
+    right: 0;
+    bottom: 5px;
+    transition: all 0.5s;
+}
+section article .txt span a i{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.5s;
+}
+section article .txt span a:hover{
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 20px;
+    right: 0;
+    bottom: 5px;
+}
+section article .txt span a:hover i{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #000;
+}
+/* ------------------------------------************ section object **********/
+section article .object{
+    width: 100%;
+    height: 800px;
+    position: relative;
+    top: 173px;
+    z-index: 1;
+}
+section article .object div{
+    position: absolute;
+}
+section article .object div:nth-of-type(1){
+    top: 140px;
+    right: 250px;
+}
+section article .object div:nth-of-type(2){
+    top: 160px;
+    right: 650px;
+}
+section article .object div:nth-of-type(3){
+    top: 110px;
+    right: 560px;
+}
+section article .object div:nth-of-type(4){
+    top: 200px;
+    right: 522px;
+}
+section article .object div:nth-of-type(5){
+    top: 285px;
+    right: 375px;
+}
+section article .object div:nth-of-type(6){
+    top: -55px;
+    right: 500px;
+}
+section article .object div:nth-of-type(7){
+    top: 300px;
+    right: 530px;
+}
+section article .object div:nth-of-type(8){
+    top: 325px;
+    right: 395px;
+}
+section article .object div:nth-of-type(9){
+    top: 450px;
+    right: 450px;
+}
+/* ------------------------------------------------ slogan */
+.slogan{
+    overflow: hidden;
+    transition: all 1s;
+}
+.slogan .inner{
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 18px;
+    animation: stripeLoop 15s linear infinite;
+}
+@keyframes stripeLoop {
+        0% {transform: translateX(0%);}
+        100% {transform: translateX(-90%);}
+}
+/* ---------------------------------------------- section txt2 */
+section article .txt2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    z-index: 2;
+}
+section article .txt2 h2{
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+section article .txt2 h3{
+    font-size: 35px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+section article .txt2 p{
+    font: normal 18px/1.5 "arial";
+    color: #777;
+    margin-bottom: 100px;
+}
+section article .txt2 p strong{
+    color: #fff;
+}
+section article .txt2 span{
+    display: flex;
+    font-size: 18px;
+    position: relative;
+}
+section article .txt2 span a{
+    width: 35px;
+    height: 35px;
+    background: brown;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 20px;
+    right: 0;
+    bottom: 5px;
+    transition: all 0.5s;
+}
+section article .txt2 span a i{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    transition: all 0.5s;
+}
+section article .txt2 span a:hover{
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 20px;
+    right: 0;
+    bottom: 5px;
+}
+section article .txt2 span a:hover i{
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #000;
+}
+/* -------------------------------------------- ************ section object2 **********/
+section article .object2{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+    z-index: 1;
+}
+section article .object2 div{
+    position: absolute;
+}
+section article .object2 div:nth-of-type(1){
+    top: 100px;
+    left: 120px;
+}
+section article .object2 div:nth-of-type(2){
+    top: 70px;
+    left: 340px;
+}
+section article .object2 div:nth-of-type(3){
+    top: 380px;
+    left: 360px;
+}
+/* -------------------------------------------- ************ section object3 **********/
+section article .object3{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    top: 80px;
+    z-index: 1;
+}
+section article .object3 div{
+    position: absolute;
+}
+section article .object3 div:nth-of-type(1){
+    top: -30px;
+    right: 720px;
+}
+section article .object3 div:nth-of-type(2){
+    top: 143px;
+    right: 650px;
+}
+section article .object3 div:nth-of-type(3){
+    top: 280px;
+    right: 550px;
+}
+section article .object3 div:nth-of-type(4){
+    top: 230px;
+    right: 770px;
+}
+section article .object3 div:nth-of-type(5){
+    top: 330px;
+    right: 685px;
+}
+section article .object3 div:nth-of-type(6){
+    top: 235px;
+    right: 725px;
+}
+section article .object3 div:nth-of-type(7){
+    top: 80px;
+    right: 590px;
+}
+section article .object3 div:nth-of-type(8){
+    top: 352px;
+    right: 635px;
+}
+section article .object3 div:nth-of-type(9){
+    top: 326px;
+    right: 635px;
+}
+/* -------------------------------------------- ************ section object4 **********/
+section article .object4{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+    z-index: 1;
+}
+section article .object4 div{
+    position: absolute;
+}
+section article .object4 div:nth-of-type(1){
+    top: -30px;
+    left: 250px;
+}
+section article .object4 div:nth-of-type(2){
+    top: 143px;
+    left: 300px;
+}
+section article .object4 div:nth-of-type(3){
+    top: 280px;
+    left: 420px;
+}
+section article .object4 div:nth-of-type(4){
+    top: 200px;
+    left: 200px;
+}
+section article .object4 div:nth-of-type(5){
+    top: 300px;
+    left: 250px;
+}
+section article .object4 div:nth-of-type(6){
+    top: 235px;
+    left: 300px;
+}
+section article .object4 div:nth-of-type(7){
+    top: 80px;
+    left: 390px;
+}
+section article .object4 div:nth-of-type(8){
+    top: 342px;
+    left: 350px;
+}
+section article .object4 div:nth-of-type(9){
+    top: 326px;
+    left: 350px;
+}
+/* -------------------------------------------- ************ section object5 **********/
+section article .object5{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+    top: 80px;
+    z-index: 1;
+}
+section article .object5::after{
+    content: "";
+    width: 350px;
+    height: 350px;
+    background: rgba(177, 44, 44, 0.7);
+    filter: blur(40px);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+    top: 180px;
+    right: 300px;
+    transition: all 1.5s;
+}
+section article .object5:hover::after{
+    transform: scale(1.5);
+    transition: all 1.5s;
+    
+}
+section article .object5 div{
+    position: absolute;
+}
+section article .object5 div:nth-of-type(1){
+    top: 250px;
+    right: 760px;
+}
+section article .object5 div:nth-of-type(2){
+    z-index: -1;
+    top: 140px;
+    right: 600px;
+}
+/* -------------------------------------------- ************ footer banner **********/
+footer .banner{
+    width: 100%;
+    height: 830px;
+    background: url(../img/main/footerbanner.png) no-repeat center / cover;
+    position: relative;
+}
+footer .banner .txtbox{
+    position: absolute;
+    text-align: center;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer .banner .txtbox ul{
+    margin-bottom: 80px;
+}
+footer .banner .txtbox ul li{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 65px;
+    opacity:0;
+}
+footer .banner .txtbox ul li:nth-of-type(4){
+    margin-bottom: 80px;
+}
+footer .banner .txtbox ul li:nth-of-type(5){
+    margin-bottom: 80px;
+}
+footer .banner .txtbox ul li:nth-of-type(1){animation:slideUP 1s 0.3s forwards}
+footer .banner .txtbox ul li:nth-of-type(2){animation:slideUP 1s 0.6s forwards}
+footer .banner .txtbox ul li:nth-of-type(3){animation:slideUP 1s 0.9s forwards}
+footer .banner .txtbox ul li:nth-of-type(4){animation:slideUP 1s 1.2s forwards}
+footer .banner .txtbox ul li:nth-of-type(5){animation:slideUP 1s 2s forwards}
+footer .banner .txtbox ul li:nth-of-type(6){animation:slideUP 1s 2.8s forwards}
+
+@keyframes slideUP {
+    0%{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+/* -------------------------------------------- ************ footer inner **********/
+footer .footinner{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+footer .footinner h2{
+    width:120px;
+    height: 38px;
+    margin-left: 50px;
+}
+footer .footinner h2 img{
+    width:120px;
+    height: 38px;
+}
+footer .footinner span{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+}
+footer .footinner .sns{
+    width: 120px;
+    height: 21px;
+    margin-right: 50px;
+}
+footer .footinner .sns ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+/* -------------------------------------------------- modal 1 */
+.modal_container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    cursor: url(../img/mouse.png),auto;
+}
+.modal_container .modal{
+    width: 4900px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+.modal_container .modal ul{
+    width: 800px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+.modal_container .modal li:nth-of-type(1){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(270deg,rgba(0,0,0,1),rgba(0,0,0,0.9) );
+}
+.modal_container .modal li:nth-of-type(2){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 33.333%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.9),rgba(0,0,0,0.6) );
+}
+.modal_container .modal li:nth-of-type(3){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 66.666%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.6),rgba(0,0,0,0) );
+}
+.modal_container .modal h2{
+    color: #fff;
+    font-size: 120px;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    letter-spacing: 3px;
+}
+.modal_container .modal div{
+    display: inline-block;
+}
+.modal_container .modal div:nth-of-type(1){
+    position: absolute;
+    top: 400px;
+    left: 900px;
+}
+.modal_container .modal div:nth-of-type(2){
+    position: absolute;
+    top: 100px;
+    left: 2050px;
+}
+.modal_container .modal div:nth-of-type(3){
+    position: absolute;
+    top: 300px;
+    left: 3000px
+}
+.modal_container .modal p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 200px;
+    left: 3950px;
+}
+/* ---------------------------------------------------------- modal 2 */
+.modal_container2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    cursor: url(../img/mouse.png),auto;
+}
+.modal_container2 .modal2{
+    width: 4800px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+.modal_container2 .modal2 ul{
+    width: 800px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+.modal_container2 .modal2 li:nth-of-type(1){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(270deg,rgba(0,0,0,1),rgba(0,0,0,0.9) );
+}
+.modal_container2 .modal2 li:nth-of-type(2){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 33.333%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.9),rgba(0,0,0,0.6) );
+}
+.modal_container2 .modal2 li:nth-of-type(3){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 66.666%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.6),rgba(0,0,0,0) );
+}
+.modal_container2 .modal2 h2{
+    color: #fff;
+    font-size: 120px;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    letter-spacing: 3px;
+}
+.modal_container2 .modal2 div{
+    display: inline-block;
+}
+.modal_container2 .modal2 div:nth-of-type(1){
+    position: absolute;
+    top: 400px;
+    left: 1000px;
+}
+.modal_container2 .modal2 div:nth-of-type(2){
+    position: absolute;
+    top: 150px;
+    left: 1950px;
+}
+.modal_container2 .modal2 p:nth-of-type(1){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 500px;
+    left: 2600px;
+}
+.modal_container2 .modal2 div:nth-of-type(3){
+    position: absolute;
+    top: 300px;
+    left: 3226px
+}
+.modal_container2 .modal2 p:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 150px;
+    left: 3876px;
+}
+/* ---------------------------------------------------------- modal 3 */
+.modal_container3{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    cursor: url(../img/mouse.png),auto;
+}
+.modal_container3 .modal3 ul{
+    width: 800px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+.modal_container3 .modal3 li:nth-of-type(1){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(270deg,rgba(0,0,0,1),rgba(0,0,0,0.9) );
+}
+.modal_container3 .modal3 li:nth-of-type(2){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 33.333%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.9),rgba(0,0,0,0.6) );
+}
+.modal_container3 .modal3 li:nth-of-type(3){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 66.666%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.6),rgba(0,0,0,0) );
+}
+.modal_container3 .modal3{
+    width: 5490px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+.modal_container3 .modal3 h2{
+    color: #fff;
+    font-size: 120px;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    letter-spacing: 3px;
+}
+.modal_container3 .modal3 div{
+    display: inline-block;
+}
+.modal_container3 .modal3 div:nth-of-type(1){
+    position: absolute;
+    top: 500px;
+    left: 1395px;
+}
+.modal_container3 .modal3 p:nth-of-type(1){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 200px;
+    left: 2168px;
+}
+.modal_container3 .modal3 div:nth-of-type(2){
+    position: absolute;
+    top: 350px;
+    left: 2876px;
+}
+.modal_container3 .modal3 div:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 3776px
+}
+.modal_container3 .modal3 p:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 300px;
+    left: 4776px;
+}
+/* ---------------------------------------------------------- modal 3 */
+.modal_container4{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    cursor: url(../img/mouse.png),auto;
+}
+.modal_container4 .modal4{
+    width: 5111px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+.modal_container4 .modal4 ul{
+    width: 800px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 101;
+}
+.modal_container4 .modal4 li:nth-of-type(1){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(270deg,rgba(0,0,0,1),rgba(0,0,0,0.9) );
+}
+.modal_container4 .modal4 li:nth-of-type(2){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 33.333%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.9),rgba(0,0,0,0.6) );
+}
+.modal_container4 .modal4 li:nth-of-type(3){
+    width: 33.333%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 66.666%;
+    background: linear-gradient(270deg,rgba(0,0,0,0.6),rgba(0,0,0,0) );
+}
+.modal_container4 .modal4 h2{
+    color: #fff;
+    font-size: 120px;
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    letter-spacing: 3px;
+}
+.modal_container4 .modal4 div{
+    display: inline-block;
+}
+.modal_container4 .modal4 div:nth-of-type(1){
+    position: absolute;
+    top: 400px;
+    left: 1035px;
+}
+.modal_container4 .modal4 div:nth-of-type(2){
+    position: absolute;
+    top: 200px;
+    left: 1919px;
+}
+.modal_container4 .modal4 p:nth-of-type(1){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    position: absolute;
+    top: 300px;
+    left: 2803px;
+}
+.modal_container4 .modal4 div:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 3346px
+}
+.modal_container4 .modal4 p:nth-of-type(2){
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 40px;
+    position: absolute;
+    top: 300px;
+    left: 4246px;
+}
+/* ---------------------------------------------------------- modal 3 */
+.modal_container5{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    cursor: url(../img/mouse.png),auto;
+}
+.modal_container5 .modal5{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+}
+.modal_container5 .modal5 ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.modal_container5 .modal5 ul li{
+    width: 332px;
+    height: 490px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px 0px;
+}
+.modal_container5 .modal5 ul li a{  
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    border-radius: 30px;
+}
+.modal_container5 .modal5 ul li a::after{  
+    content: "";
+    width: 332px;
+    height: 490px;
+    background: #777;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.modal_container5 .modal5 ul li a .name span{
+    position: absolute;
+    top: 205px;
+    left: 96.5px;
+    color: #fff;
+    font-size: 30px;
+    z-index: 1111;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.modal_container5 .modal5 ul li:hover a::after{
+    opacity: 0.6;
+}
+.modal_container5 .modal5 ul li:hover a .name span{
+    opacity: 1;
+}
+.modal_container5 .modal5 ul li:hover a img{
+    transform:scale(1.2);
+    transition:all 3s;
+}
