@@ -46,7 +46,7 @@ const slide = new Swiper('.swiper', {
     navigation: {   // 버튼 사용자 지정
         nextEl: '.special .swiper .btn .next',
         prevEl: '.special .swiper .btn .prev',
-    },
+    }
   })
 
 //device size motion
@@ -73,11 +73,14 @@ $(function(){
     $(".map .map_inner .innisfree .innisfree_txt").hide();
         
     $(".map .map_inner .tea_stone img:nth-of-type(1)").hide();
-    $(".map .map_inner .tea_stone .txt_stone").hide();
+    $(".map .map_inner .tea_stone .tea_stone_txt").hide();
     $(".map .map_inner .tea_stone img:nth-of-type(2)").hide();
         
     $(".subscribe ul li:nth-of-type(1)").hide();
     $(".subscribe ul li:nth-of-type(2)").hide();
+
+    $(".typing .typing-wrapper .typing-text").hide();
+    $(".typing .teabox_container").hide();
 
     $("footer .banner .txtbox .motion .animate").hide();
 });
@@ -88,21 +91,17 @@ $(window).resize(function(){
     
         // scroll motion
         $(function(){
-        
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
         
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
                 if (scroll >= 2100) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
-            
                 if (scroll >= 4900) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
@@ -134,21 +133,15 @@ $(window).resize(function(){
                         $(".map .map_inner .tea_stone img:nth-of-type(2)").fadeIn();
                     },1500);
                 }
-        
                 if (scroll >= 8200) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
-        
+
         // typing motion
         $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
         
@@ -162,41 +155,54 @@ $(window).resize(function(){
             });
         });
 
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
         // footer text slide-up
         $(function(){
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
 
-            if(scroll >= 10670){ 
+            if(scroll > 10670){ 
                 $("footer .banner .txtbox .motion .animate").show();
-                }
-                else{
-                $("footer .banner .txtbox .motion .animate").hide();
                 }
             });
         });
-    
+
     } 
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
     
     else if(window.innerWidth > 1400) { // 다바이스 크기가 1400이상 일때
-    
         //scroll motion
         $(function(){
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
         
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
                 if (scroll >= 2100) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
-            
                 if (scroll >= 4600) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
@@ -228,21 +234,15 @@ $(window).resize(function(){
                         $(".map .map_inner .tea_stone img:nth-of-type(2)").fadeIn();
                     },1500);
                 }
-        
                 if (scroll >= 7400) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
         
-         // 타이핑 효과
+         // typing motion
          $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
         
@@ -256,41 +256,52 @@ $(window).resize(function(){
             });
         });
 
-            // 푸터 텍스트 모션
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
+        // footer text slide-up
         $(function(){
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
-
-            if(scroll >= 10193){ 
+            if(scroll > 10193){ 
                 $("footer .banner .txtbox .motion .animate").show();
             }
-            else{
-                $("footer .banner .txtbox .motion .animate").hide();
-                }
             }); 
         });
-    
     } 
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
     
     else if(window.innerWidth > 1100) { // 다바이스 크기가 1100이상 일때
-    
         //scroll motion
         $(function(){
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
         
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
                 if (scroll >= 2100) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
-            
                 if (scroll >= 4500) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
@@ -322,21 +333,15 @@ $(window).resize(function(){
                         $(".map .map_inner .tea_stone img:nth-of-type(2)").fadeIn();
                     },1500);
                 }
-        
                 if (scroll >= 6900) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
         
-         // 타이핑 효과
+         // typing motion
          $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
         
@@ -350,22 +355,38 @@ $(window).resize(function(){
             });
         });
 
-            // 푸터 텍스트 모션
-            $(function(){
-                $(document).scroll(function(){ 
-                    const scroll = $(window).scrollTop();
-                    // console.log(scroll);
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
+        // footer text slide-up
+        $(function(){
+            $(document).scroll(function(){ 
+                const scroll = $(window).scrollTop();
     
                 if(scroll > 9258){ 
                     $("footer .banner .txtbox .motion .animate").show();
                 }
-                else{
-                    $("footer .banner .txtbox .motion .animate").hide();
-                    }
-                return false;
-                });
             });
-        } 
+        });
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------------------------
     
     else if(window.innerWidth > 880) { // 다바이스 크기가 880이상 일때
     
@@ -373,18 +394,15 @@ $(window).resize(function(){
         $(function(){
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
         
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
                 if (scroll >= 2100) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
-            
                 if (scroll >= 4200) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
@@ -416,21 +434,15 @@ $(window).resize(function(){
                         $(".map .map_inner .tea_stone img:nth-of-type(2)").fadeIn();
                     },1500);
                 }
-        
                 if (scroll >= 6525) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
         
-         // 타이핑 효과
+         // tyiping motion
         $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
         
@@ -444,23 +456,38 @@ $(window).resize(function(){
             });
         });
 
-            // 푸터 텍스트 모션
-            $(function(){
-                $(document).scroll(function(){ 
-                    const scroll = $(window).scrollTop();
-                    // console.log(scroll);
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
+        // footer text slide-up
+        $(function(){
+            $(document).scroll(function(){ 
+                const scroll = $(window).scrollTop();
     
-                if(scroll >= 8725){ 
+                if(scroll > 8725){ 
                     $("footer .banner .txtbox .motion .animate").show();
                 }
-                else{
-                    $("footer .banner .txtbox .motion .animate").hide();
-                    }
-                    return false;
                 }); 
             });
-    
-    } 
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------------------
     
     else if(window.innerWidth > 640) { // 다바이스 크기가 640이상 일때
         
@@ -489,36 +516,28 @@ $(window).resize(function(){
         $(function(){
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
+
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
                 if (scroll >= 1844) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
-            
                 if (scroll >= 3542) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
-                    // setTimeout(function(){
-                    //     $(".map .map_inner .museum img:nth-of-type(1)").hide();
-                    // },1500);
                 }
                 if (scroll >= 3942) {
-                    // $(".map .map_inner .farm img:nth-of-type(1)").hide();
                     $(".map .map_inner .farm img:nth-of-type(2)").show();
                     $(".map .map_inner .farm .farm_txt").show();
                 }
                 if (scroll >= 4242) {
                     $(".map .map_inner .garden .garden_txt").show();
                     $(".map .map_inner .garden img:nth-of-type(2)").show();
-                    // $(".map .map_inner .garden img:nth-of-type(1)").hide();
                 }
                 if (scroll >= 4642) {
-                    // $(".map .map_inner .innisfree img:nth-of-type(2)").hide();
                     $(".map .map_inner .innisfree img:nth-of-type(1)").show();
                     $(".map .map_inner .innisfree .innisfree_txt").show();
                 }
@@ -526,25 +545,16 @@ $(window).resize(function(){
                     $(".map .map_inner .tea_stone img:nth-of-type(1)").show();
                     $(".map .map_inner .tea_stone .tea_stone_txt").show();
                     $(".map .map_inner .tea_stone .tea_stone_txt span").show();
-                    // setTimeout(function(){
-                    //     $(".map .map_inner .tea_stone img:nth-of-type(2)").hide();
-                    // },1500);
                 }
-        
                 if (scroll >= 5782) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
-        
-         // 타이핑 효과
-         $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
+
+        // typing motion
+        $(function(){    
             $(document).scroll(function(){ 
                 const scroll = $(window).scrollTop();
         
@@ -558,23 +568,152 @@ $(window).resize(function(){
             });
         });
 
-            // 푸터 텍스트 모션
-            $(function(){
-                $(document).scroll(function(){ 
-                    const scroll = $(window).scrollTop();
-                    console.log(scroll);
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
+        // footer text slide-up
+        $(function(){
+            $(document).scroll(function(){ 
+                const scroll = $(window).scrollTop();
     
-                if(scroll >= 8151){ 
+                if(scroll > 8151){ 
                     $("footer .banner .txtbox .motion .animate").show();
                 }
-                else{
-                    $("footer .banner .txtbox .motion .animate").hide();
-                    }
-                return false;
-                }); 
-            });
-    
+            }); 
+        });
     }
+
+    // ----------------------------------------------------------------------------------------------------------------------------
+
+    else if(window.innerWidth > 500) { // 다바이스 크기가 500이상 일때
+        
+        $(".wrap header i").click(function(){ 
+            $(".wrap header .sub_menu").show();
+            $(".wrap header .sub_menu").addClass("open");
+            $(".wrap header .sub_menu").removeClass("close");
+        });
+        $(".wrap header .sub_menu i").click(function(){
+            $(".wrap header .sub_menu").fadeOut(1500);
+            $(".wrap header .sub_menu").addClass("close");
+            $(".wrap header .sub_menu").removeClass("open");
+        });
+        $(".wrap .bg i").click(function(){ 
+            $(".wrap .bg .sub_menu2").show();
+            $(".wrap .bg .sub_menu2").addClass("open");
+            $(".wrap .bg .sub_menu2").removeClass("close");
+        });
+        $(".wrap .bg .sub_menu2 i").click(function(){
+            $(".wrap .bg .sub_menu2").fadeOut(1000);
+            $(".wrap .bg .sub_menu2").addClass("close");
+            $(".wrap .bg .sub_menu2").removeClass("open");
+        });
+
+        //scroll motion
+        $(function(){
+            $(document).scroll(function(){
+                const scroll = $(window).scrollTop();
+
+                if (scroll >= 850) {
+                    $(".collection .collection_inner").show();
+                }
+                if (scroll >= 1700) {
+                    $(".news ul li:nth-of-type(1)").show();
+                    $(".news ul li:nth-of-type(2)").show();
+                    $(".news ul li:nth-of-type(3)").show();
+                }
+            
+                if (scroll >= 3000) {
+                    $(".map .map_inner .museum img:nth-of-type(2)").show();
+                    $(".map .map_inner .museum .museum_txt").show();
+                }
+                if (scroll >= 3300) {
+                    $(".map .map_inner .farm img:nth-of-type(2)").show();
+                    $(".map .map_inner .farm .farm_txt").show();
+                }
+                if (scroll >= 3600) {
+                    $(".map .map_inner .garden .garden_txt").show();
+                    $(".map .map_inner .garden img:nth-of-type(2)").show();
+                }
+                if (scroll >= 3900) {
+                    $(".map .map_inner .innisfree img:nth-of-type(1)").show();
+                    $(".map .map_inner .innisfree .innisfree_txt").show();
+                }
+                if (scroll >= 4200) {
+                    $(".map .map_inner .tea_stone img:nth-of-type(1)").show();
+                    $(".map .map_inner .tea_stone .tea_stone_txt").show();
+                    $(".map .map_inner .tea_stone .tea_stone_txt span").show();
+                }
+                if (scroll >= 4900) {
+                    $(".subscribe ul li:nth-of-type(1)").show();
+                    $(".subscribe ul li:nth-of-type(2)").show();
+                }
+            });
+        });
+        
+         // typing motion
+         $(function(){
+            $(document).scroll(function(){
+                const scroll = $(window).scrollTop();
+        
+            if(scroll >= 5200){
+                $(".typing .typing-wrapper .typing-text").show();
+                $(".typing .typing-wrapper").addClass("add_motion");
+                setTimeout(function(){
+                    $(".typing .teabox_container").fadeIn();
+                },4500);
+                }
+            });
+        });
+
+        //teabox scroll
+        $(function(){
+            $(".typing .teabox_container").niceScroll({
+                cursorcolor: "grey",
+                cursorwidth: 3,
+                scrollspeed: 60,
+                cursorborderradius: 60,
+                mousescrollstep: 40,
+                cursoropacitymin: 0,
+                cursoropacitymax: 1,
+                background: true,
+                cursorborder: true,
+                autohidemode: true,
+                boxzoom: true,
+                smoothscroll: true,
+                zindex: 9999
+            });
+        });
+
+        // footer text slide-up
+        $(function(){
+            $(document).scroll(function(){ 
+                const scroll = $(window).scrollTop();
+                console.log(scroll);
+    
+                if(scroll >= 6999){ 
+                    $("footer .banner .txtbox .motion .animate").show();
+                }
+            });
+        });
+    }
+
+    // ----------------------------------------------------------------------------------------------------------------------------
 
     else if(window.innerWidth > 0) { // 다바이스 크기가 0이상 일때
         
@@ -603,66 +742,50 @@ $(window).resize(function(){
         $(function(){
             $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
-                // console.log(scroll);
+
                 if (scroll >= 850) {
                     $(".collection .collection_inner").show();
                 }
-        
-                if (scroll >= 1844) {
+                if (scroll >= 1500) {
                     $(".news ul li:nth-of-type(1)").show();
                     $(".news ul li:nth-of-type(2)").show();
                     $(".news ul li:nth-of-type(3)").show();
                 }
             
-                if (scroll >= 3542) {
+                if (scroll >= 2911) {
                     $(".map .map_inner .museum img:nth-of-type(2)").show();
                     $(".map .map_inner .museum .museum_txt").show();
-                    // setTimeout(function(){
-                    //     $(".map .map_inner .museum img:nth-of-type(1)").hide();
-                    // },1500);
                 }
-                if (scroll >= 3942) {
-                    // $(".map .map_inner .farm img:nth-of-type(1)").hide();
+                if (scroll >= 3211) {
                     $(".map .map_inner .farm img:nth-of-type(2)").show();
                     $(".map .map_inner .farm .farm_txt").show();
                 }
-                if (scroll >= 4242) {
+                if (scroll >= 3511) {
                     $(".map .map_inner .garden .garden_txt").show();
                     $(".map .map_inner .garden img:nth-of-type(2)").show();
-                    // $(".map .map_inner .garden img:nth-of-type(1)").hide();
                 }
-                if (scroll >= 4642) {
-                    // $(".map .map_inner .innisfree img:nth-of-type(2)").hide();
+                if (scroll >= 3811) {
                     $(".map .map_inner .innisfree img:nth-of-type(1)").show();
                     $(".map .map_inner .innisfree .innisfree_txt").show();
                 }
-                if (scroll >= 4942) {
+                if (scroll >= 4111) {
                     $(".map .map_inner .tea_stone img:nth-of-type(1)").show();
                     $(".map .map_inner .tea_stone .tea_stone_txt").show();
                     $(".map .map_inner .tea_stone .tea_stone_txt span").show();
-                    // setTimeout(function(){
-                    //     $(".map .map_inner .tea_stone img:nth-of-type(2)").hide();
-                    // },1500);
                 }
-        
-                if (scroll >= 5782) {
+                if (scroll >= 4811) {
                     $(".subscribe ul li:nth-of-type(1)").show();
                     $(".subscribe ul li:nth-of-type(2)").show();
                 }
-                return false;
             });
         });
         
-         // 타이핑 효과
+         // typing motion
          $(function(){
-            
-            $(".typing .typing-wrapper .typing-text").hide();
-            $(".typing .teabox_container").hide();
-        
-            $(document).scroll(function(){ 
+            $(document).scroll(function(){
                 const scroll = $(window).scrollTop();
         
-            if(scroll >= 6200){
+            if(scroll >= 5200){
                 $(".typing .typing-wrapper .typing-text").show();
                 $(".typing .typing-wrapper").addClass("add_motion");
                 setTimeout(function(){
@@ -672,50 +795,21 @@ $(window).resize(function(){
             });
         });
 
-            // 푸터 텍스트 모션
-            $(function(){
-                $(document).scroll(function(){ 
-                    const scroll = $(window).scrollTop();
-                    console.log(scroll);
+        // footer text slide-up
+        $(function(){
+            $(document).scroll(function(){ 
+                const scroll = $(window).scrollTop();
+                console.log(scroll);
     
-                if(scroll >= 8151){ 
+                if(scroll > 6999){ 
                     $("footer .banner .txtbox .motion .animate").show();
                 }
-                else{
-                    $("footer .banner .txtbox .motion .animate").hide();
-                    }
-                return false;
-                }); 
             });
-    
+        });
     }
-    
-    }).resize();
-
-
-//teabox scroll
-$(function(){
-    $(".typing .teabox_container").niceScroll({
-        cursorcolor: "grey",
-        cursorwidth: 3,
-        scrollspeed: 60,
-        cursorborderradius: 60,
-        mousescrollstep: 40,
-        cursoropacitymin: 0,
-        cursoropacitymax: 1,
-        background: true,
-        cursorborder: true,
-        autohidemode: true,
-        boxzoom: true,
-        smoothscroll: true,
-        zindex: 9999
-    });
-})
-
+}).resize();
 
 // top button 
-
-
 $(function(){
 
     $("footer .top_btn").hide();

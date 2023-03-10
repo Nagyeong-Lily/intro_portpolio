@@ -11,24 +11,22 @@
     font-family: 'WandohopeR';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
-}
+    font-style: normal;}
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
-    font-style: normal;
-}
+    font-style: normal;}
 @font-face {
     font-family: 'SUIT-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
     font-weight: normal;
-    font-style: normal;
-}
+    font-style: normal;}
+html{max-width:100%; overflow-x: hidden;}
+body{max-width:100%; height: 100%; overflow-x:hidden; background: #fff;}
 *{margin:0;padding:0;box-sizing:border-box}
 ol,ul{list-style:none}
 a{text-decoration:none;color:inherit}
-html{scroll-behavior: smooth;}
 .tea{font-family: 'Great Vibes', cursive;}
 .colltxt{font-family: 'NanumSquareNeo-Variable';}
 .ko{font-family: 'Noto Sans KR', sans-serif;}
@@ -36,7 +34,7 @@ html{scroll-behavior: smooth;}
 .foot{font-family: 'Pretendard-Regular';}
 .copy{font-family: 'SUIT-Regular';}
 ::selection{background:#000; color:#fff;}
-body{ width: 100%; height: 100%; background: #fff; overflow-x:hidden;}
+
 
 .wrap{
     width: 100%;
@@ -815,8 +813,8 @@ body{ width: 100%; height: 100%; background: #fff; overflow-x:hidden;}
     right: 387px;
     top: 80px;
     color: rgb(79, 78, 78);
+    animation: fadeInRight 0.5s 1s forwards;
     display: none;
-    animation: fadeInLeft 0.5s 1s forwards;
 }
 .map .map_inner .tea_stone .tea_stone_txt{
     position: absolute;
@@ -1940,6 +1938,7 @@ footer .top_btn a img{
     .map .map_inner .tea_stone .tea_stone_txt{
         top: 30px;
         left: 387px;
+        display: none;
     }
     .subscribe{
         width: 100%;
@@ -2274,11 +2273,7 @@ footer .top_btn a img{
         animation: fadeInRight 0.5s 0.5s forwards;
     }
     .map .map_inner .innisfree img:nth-of-type(2){
-        left: 0;
-        z-index: -1;
-        top: 0;
-        opacity: 0;
-        display: none;
+        display: none !important; 
     }
     .map .map_inner .tea_stone{
         width: 100%;
@@ -2447,6 +2442,528 @@ footer .top_btn a img{
     }
     footer .copyright{
         font-size: 10px;
+    }
+    footer .top_btn{
+        width: 35px;
+        height: 35px;
+        bottom: 30px;
+        right: 30px;
+    }
+    footer .top_btn a img{
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width:640px){
+    .wrap .main_bg{
+        margin-bottom: 250px;
+    }
+    .wrap .progress_bar .bar{
+        display: none;
+    }
+    .wrap header{
+        padding: 0px 30px;
+    }
+    .wrap header h2 a img{
+        width: 80px;
+        height: 28px;
+    }
+    .wrap header ul{
+        display: none;
+    }
+    .wrap header .menu{
+        display: none;
+    }
+    .wrap header i{
+        opacity: 1;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .wrap .bg{
+        padding: 0px 30px;
+        z-index: 10;
+    }
+    .wrap .bg h2 a img{
+        width: 80px;
+        height: 28px;
+    }
+    .wrap .bg ul{
+        display: none;
+    }
+    .wrap .bg .menu{
+        display: none;
+    }
+    .wrap .bg i{
+        opacity: 1;
+        font-size: 30px;
+        color: rgb(49, 49, 49);
+        cursor: pointer;
+    }
+    .collection{
+        width: 100%;
+        height: 310px;
+        margin-bottom: 250px;
+    }
+    .collection h3{
+        font-size: 35px;
+    }
+    .collection .collection_bar{
+        width: 300px;
+    }
+    .collection .collection_bar .teafood_bar{
+        width: 150px;
+    }
+    .collection .collection_bar .teabeauty_bar{
+        width: 150px;
+    }
+    .collection .food_inner{
+        width: 300px;
+        height: 171px;
+        margin-top: 50px;
+    }
+    .collection .food_inner img{
+        width: 150px;
+        height: 171px;
+    }
+    .collection .food_inner .txt_right{
+        width: 150px;
+        height: 171px;
+        margin-left: 15px;
+        padding-top: 0px;
+    }
+    .collection .food_inner .txt_right span{
+        font-size: 40px;
+    }
+    .collection .food_inner .txt_right p{
+        font-size: 10px;
+        line-height: 15px;
+        margin-top: 15px;
+    }
+    .collection .food_inner .txt_right p strong{
+        font-size: 13px;
+    }
+    .collection .food_inner .txt_right a{
+        font-size: 10px;
+    }
+    .collection .beauty_inner{
+        width: 300px;
+        height: 171px;
+        margin-top: 50px;
+    }
+    .collection .beauty_inner .txt_left{
+        width: auto;
+        height: 171px;
+        padding-top: 0px;
+        margin-left: 0px;
+        white-space: nowrap;
+    }
+    .collection .beauty_inner .txt_left span{
+        font-size: 38px;
+        margin-left: 0;
+        padding-top: 0;
+    }
+    .collection .beauty_inner .txt_left p{
+        font-size: 10px;
+        line-height: 15px;
+        margin: 15px 15px 0px 15px;
+    }
+    .collection .beauty_inner .txt_left p strong{
+        font-size: 13px;
+    }
+    .collection .beauty_inner .txt_left a{
+        font-size: 10px;
+        margin-right: 15px;
+    }
+    .collection .beauty_inner img{
+        width: 150px;
+        height: 171px;
+    }
+    .news{
+        width: 100%;
+        height: 380px;
+        margin-bottom: 250px;
+    }
+    .news h3{
+        font-size: 40px;
+    }
+    .news span{
+        font-size: 16px;
+    }
+    .news ul{
+        margin-top: -40px;
+    }
+    .news ul li{
+        width: 120px;
+        height: 187px;
+        margin-right: 15px;
+    }
+    .news ul li img{
+        width: 120px;
+        height: 187px;
+    }
+    .news ul li::after{
+        width: 120px;
+        height: 187px;
+    }
+    .news ul li .news_txt p{
+        width: auto;
+        height: 130px;
+        font-size: 5px;
+    }
+    .news ul li .news_txt p strong{
+        font-size: 8px;
+    }
+    .news ul li .news_txt a{
+        font-size: 5px;
+        padding: 3px 30px;
+        margin-left: 2px;
+    }
+    .special{
+        margin-bottom: 250px;
+    }
+    .special h3{
+        font-size: 40px;
+    }
+    .special span{
+        font-size: 16px;
+    }
+    .special .swiper{
+        margin-top: 60px;
+    }
+    #test1{
+        width: 300px;
+        height: 300px;
+        background-image: url("../img/special1-1.png");
+    }
+    #test2{
+        width: 300px;
+        height: 300px;
+        background-image: url("../img/special2-1.png");
+    }
+    #test3{
+        width: 300px;
+        height: 300px;
+        background-image: url("../img/special3-1.png");
+    }
+    #test4{
+        width: 300px;
+        height: 300px;
+        background-image: url("../img/special4-1.png");
+    }
+    #test1 .half{
+        width: 150px;
+        height: 300px;
+    }
+    #test2 .half{
+        width: 150px;
+        height: 300px;
+    }
+    #test3 .half{
+        width: 150px;
+        height: 300px;
+    }
+    #test4 .half{
+        width: 150px;
+        height: 300px;
+    }
+    .special .swiper .swiper-slide div .half_txt{
+        text-align: right;
+        left: -10px;
+        top: 30px;
+        margin-left: 0;       
+    }
+    .special .swiper .swiper-slide div .half_txt p{
+        font-size: 8px;
+    }
+    .special .swiper .swiper-slide div .half_txt p strong{
+        font-size: 13px;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    .special .swiper .btn{
+        font-size: 40px;
+    }
+    .special .swiper .btn .prev{
+        margin-right: 330px;
+    }
+    .map{
+        margin-bottom: 250px;
+    }
+    .map h3{
+        font-size: 40px;
+    }
+    .map span{
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+    .map .map_inner .museum{
+        width: 100%;
+        height: 200px;
+    }
+    .map .map_inner .museum img:nth-of-type(1){
+        display: none;
+        opacity: 0;
+    }
+    .map .map_inner .museum .museum_txt{
+        top: 174px;
+        right: 89px;
+        z-index: 1;
+        animation: fadeInLeft 0.5s 1s forwards;
+    }
+    .map .map_inner .museum .museum_txt span{
+        font-size: 18px;
+        color: #fff;
+    }
+    .map .map_inner .museum .museum_txt p{
+        display: none;
+    }
+    .map .map_inner .museum img:nth-of-type(2){
+        right: 0;
+        animation: fadeInLeft 0.5s 0.5s forwards;
+    }
+    .map .map_inner .farm{
+        width: 100%;
+        height: 200px;
+    }
+    .map .map_inner .farm img:nth-of-type(1){
+        display: none;
+        opacity: 0;
+    }
+    .map .map_inner .farm img:nth-of-type(2){
+        left: 0px;
+        animation: fadeInRight 0.5s 0.5s forwards;
+    }
+    .map .map_inner .farm .farm_txt{
+        top: 174px;
+        left: 89px;
+        z-index: 1;
+        animation: fadeInRight 0.5s 1s forwards;
+    }
+    .map .map_inner .farm .farm_txt span{
+        font-size: 18px;
+        color: #fff;
+    }
+    .map .map_inner .farm .farm_txt p{
+        display: none;
+    }
+    .map .map_inner .garden{
+        width: 100%;
+        height: 200px;
+    }
+    .map .map_inner .garden img:nth-of-type(1){
+        display: none;
+        opacity: 0;
+    }
+    .map .map_inner .garden .garden_txt{
+        top: 174px;
+        right: 89px;
+        z-index: 1;
+        animation: fadeInLeft 0.5s 1s forwards;
+    }
+    .map .map_inner .garden .garden_txt span{
+        font-size: 18px;
+        color: #fff;
+    }
+    .map .map_inner .garden .garden_txt p{
+        display: none;
+    }
+    .map .map_inner .garden img:nth-of-type(2){
+        top: 0;
+        right: 0;
+        animation: fadeInLeft 0.5s 0.5s forwards;
+    }
+    .map .map_inner .innisfree{
+        width: 100%;
+        height: 200px;
+    }
+    .map .map_inner .innisfree .innisfree_txt{
+        top: 174px;
+        left: 89px;
+        z-index: 1;
+        animation: fadeInRight 0.5s 1s forwards;
+    }
+    .map .map_inner .innisfree .innisfree_txt span{
+        text-align: left;
+        font-size: 18px;
+        color: #fff;
+
+    }
+    .map .map_inner .innisfree .innisfree_txt p{
+        text-align: left;
+        display: none;
+    }
+    .map .map_inner .innisfree img:nth-of-type(1){
+        top: 0;
+        left: 0;
+        animation: fadeInRight 0.5s 0.5s forwards;
+    }
+    .map .map_inner .innisfree img:nth-of-type(2){
+        opacity: 0;
+        display: none;
+    }
+    .map .map_inner .tea_stone{
+        width: 100%;
+        height: 200px;
+        position: relative;
+    }
+    .map .map_inner .tea_stone img:nth-of-type(1){
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: fadeInLeft 0.5s 0.5s forwards;
+    }
+    .map .map_inner .tea_stone .tea_stone_txt{
+        top: 174px;
+        left: 100%;
+        display: none;
+    }
+    .map .map_inner .tea_stone .tea_stone_txt span{
+        text-align: right;
+        font-size: 18px;
+        white-space: nowrap;
+        position: absolute;
+        right: 89px;
+        z-index: 1;
+        color: #fff;
+        animation: fadeInLeft 0.5s 1s forwards;
+    }
+    .map .map_inner .tea_stone .tea_stone_txt p{
+        display: none;
+        text-align: right;
+    }
+    .map .map_inner .tea_stone img:nth-of-type(2){
+        display: none;
+        opacity: 0;
+    }
+    .subscribe{
+        width: 100%;
+        height: 370px;
+        margin-bottom: 250px;
+    }
+    .subscribe h3{
+        font-size: 40px;
+    }
+    .subscribe span{
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+    .subscribe ul li{
+        width: 180px;
+        height: 180px;
+        margin-right: 20px;
+    }
+    .subscribe ul li img{
+        width: 180px;
+        height: 180px;
+    }
+    .subscribe ul li::after{
+        content: "";
+        width: 180px;
+        height: 180px;
+    }
+    .subscribe ul li .tea_txt {
+        white-space: nowrap;
+    }
+    .subscribe ul li .tea_txt span{
+        font-size: 7px;
+        margin-bottom: 20px;
+    }
+    .subscribe ul li .tea_txt span strong{
+        font-size: 10px;
+    }
+    .subscribe ul li .tea_txt p{
+        font-size: 7px;
+    }
+    .typing{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 250px;
+    }
+    .typing .typing-wrapper .typing-text{
+        font-size: 20px;
+    }
+    .typing .teabox_container .teabox_inner{
+        width: 3500px;
+        height: 400px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 40px 70px;
+    }
+    .typing .teabox_container .teabox_inner .teabox_con{
+        width: 200px;
+        height: 230px
+    }
+    .typing .teabox_container .teabox_inner .teabox_con a img{
+        width: 200px;
+        height: 230px;
+    }
+    .typing .teabox_container .teabox_inner .teabox_con .pic{
+        width: 200px;
+        height: 230px;
+    }
+    .sns_insta{
+        width: 100%;
+        height: 1020px;
+        margin-bottom: 250px;
+    }
+    .sns_insta h3{
+        font-size: 40px;
+    }
+    .sns_insta span{
+        font-size: 16px;
+        margin-bottom: 60px;
+    }
+    .sns_insta .sns_box ul{
+        display: block;
+        width: 440px;
+    }
+    .sns_insta .sns_box ul li{
+        width: 170px;
+        height: 170px;
+        margin-bottom: 50px;
+    }
+    .sns_insta .sns_box ul li:nth-last-child(1){float: left;}
+    .sns_insta .sns_box ul li:nth-last-child(2){float: right;}
+    .sns_insta .sns_box ul li:nth-last-child(3){float: left;}
+    .sns_insta .sns_box ul li:nth-last-child(4){float: right;}
+    .sns_insta .sns_box ul li img{
+        width: 170px;
+        height: 170px;
+    }
+    footer .banner{
+        width: 100%;
+        height: 555px;
+        background: url(../img/footer_banner.jpg) no-repeat center / cover;
+        position: relative;
+    }
+    footer .banner .txtbox ul li{
+        font-size: 20px;
+        line-height: 70px;
+        white-space: nowrap;
+    }
+    footer .footer_inner ul{
+        display: none;
+    }
+    footer .footer_inner .footer_txt{
+        font-size: 12px;
+        line-height: 30px;
+    }
+    footer .footer_inner .footer_txt p{
+        display: block;
+        white-space: nowrap;
+    }
+    footer .footer_inner .familysite{
+        display: none;
+    }
+    footer > p{
+        font-size: 12px;
+    }
+    footer .copyright{
+        font-size: 10px;
+        white-space: nowrap;
     }
     footer .top_btn{
         width: 35px;
